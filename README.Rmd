@@ -1,0 +1,81 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+# geodistpar
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+<!-- The goal of geodistpar is to ... -->
+
+<!-- ## Installation -->
+
+<!-- You can install the released version of geodistpar from [CRAN](https://CRAN.R-project.org) with: -->
+
+<!-- ``` r -->
+<!-- install.packages("geodistpar") -->
+<!-- ``` -->
+
+And the development version from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("mkuehn10/geodistpar")
+```
+## Example
+
+```{r example}
+library(geodistpar)
+library(geodist)
+library(microbenchmark)
+library(ggplot2)
+
+set.seed(10)
+n <- 1000
+x <- cbind (-10 + 20 * stats::runif (n), -10 + 20 * stats::runif (n))
+y <- cbind (-10 + 20 * stats::runif (2 * n), -10 + 20 * stats::runif (2 * n))
+colnames (x) <- colnames (y) <- c ("x", "y")
+
+a <- geodist::geodist(x, y, measure = "haversine")
+b <- geodistpar::geodistpar(x, y, measure = "haversine")
+
+head(a[, 1:5])
+head(b[, 1:5])
+identical(a, b)
+
+mb1 <- microbenchmark::microbenchmark(
+  geodist = geodist::geodist(x, y, measure = "haversine"),
+  geodistpar = geodistpar::geodistpar(x, y, measure = "haversine"),
+  times = 25
+)
+
+mb1
+autoplot(mb1)
+
+a <- geodist::geodist(x, y, measure = "vincenty")
+b <- geodistpar::geodistpar(x, y, measure = "vincenty")
+
+head(a[, 1:5])
+head(b[, 1:5])
+identical(a, b)
+
+mb2 <- microbenchmark::microbenchmark(
+  geodist = geodist::geodist(x, y, measure = "vincenty"),
+  geodistpar = geodistpar::geodistpar(x, y, measure = "vincenty"),
+  times = 25
+)
+
+mb2
+autoplot(mb2)
+```
