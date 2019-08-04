@@ -10,6 +10,9 @@ geodistpar(x, y, measure = "cheap")
 \item{x}{Rectangular object}
 
 \item{y}{Rectangular object}
+
+\item{measure}{One of "haversine" "vincenty", "geodesic", or "cheap"
+specifying desired method of geodesic distance calculation}
 }
 \description{
 Generate a distance matrix

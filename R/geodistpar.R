@@ -8,6 +8,8 @@ NULL
 #'
 #' @param x Rectangular object
 #' @param y Rectangular object
+#' @param measure One of "haversine" "vincenty", "geodesic", or "cheap"
+#' specifying desired method of geodesic distance calculation
 #' @export
 geodistpar <- function(x, y, measure = "cheap") {
 

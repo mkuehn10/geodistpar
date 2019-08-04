@@ -1,10 +1,13 @@
+---
+output: github_document
+---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
 
 # geodistpar
 
 <!-- badges: start -->
-
 <!-- badges: end -->
 
 <!-- The goal of geodistpar is to ... -->
@@ -14,16 +17,12 @@
 <!-- You can install the released version of geodistpar from [CRAN](https://CRAN.R-project.org) with: -->
 
 <!-- ``` r -->
-
 <!-- install.packages("geodistpar") -->
-
 <!-- ``` -->
 
-I developed some RcppParallel code to calculate large distance matrices
-quickly.  
-I later discovered <https://github.com/hypertidy/geodist> and thought
-that a more aligned parallel version of that package could possibly have
-some use.
+I developed some RcppParallel code to calculate large distance matrices quickly.  
+I later discovered <https://github.com/hypertidy/geodist> and thought that a 
+more aligned parallel version of that package could possibly have some use.
 
 Also see: <https://github.com/hypertidy/geodist/issues/16>
 
@@ -31,10 +30,10 @@ Also see: <https://github.com/hypertidy/geodist/issues/16>
 # install.packages("devtools")
 devtools::install_github("mkuehn10/geodistpar")
 ```
-
 ## Example
 
-``` r
+
+```r
 library(geodistpar)
 library(geodist)
 library(microbenchmark)
@@ -88,7 +87,7 @@ autoplot(mb1)
 
 <img src="man/figures/README-example-1.png" width="100%" />
 
-``` r
+```r
 
 a <- geodist::geodist(x, y, measure = "vincenty")
 b <- geodistpar::geodistpar(x, y, measure = "vincenty")

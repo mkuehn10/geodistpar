@@ -27,7 +27,11 @@ knitr::opts_chunk$set(
 <!-- install.packages("geodistpar") -->
 <!-- ``` -->
 
-And the development version from [GitHub](https://github.com/) with:
+I developed some RcppParallel code to calculate large distance matrices quickly.  
+I later discovered <https://github.com/hypertidy/geodist> and thought that a 
+more aligned parallel version of that package could possibly have some use.
+
+Also see: <https://github.com/hypertidy/geodist/issues/16>
 
 ``` r
 # install.packages("devtools")
