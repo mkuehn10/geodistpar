@@ -17,3 +17,5 @@ LinkingTo:
 Imports: 
     Rcpp,
     RcppParallel
+URL: https://github.com/mkuehn10/geodistpar
+BugReports: https://github.com/mkuehn10/geodistpar/issues
