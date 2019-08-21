@@ -1,5 +1,6 @@
 #' @useDynLib geodistpar
 #' @importFrom Rcpp sourceCpp
+#' @importFrom RcppParallel RcppParallelLibs
 NULL
 
 #' geodistpar

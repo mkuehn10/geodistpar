@@ -69,7 +69,8 @@ NumericMatrix geodistpar_cpp(NumericMatrix x, NumericMatrix y, int measure) {
 
   myDistanceMatrix my_distance_matrix(x, y, rmat, measure);
 
-  parallelFor(0, rmat.nrow(), my_distance_matrix, 1);
+  parallelFor(0, rmat.nrow(), my_distance_matrix);
 
   return rmat;
 }
+

@@ -2,4 +2,5 @@
 
 export(geodistpar)
 importFrom(Rcpp,sourceCpp)
+importFrom(RcppParallel,RcppParallelLibs)
 useDynLib(geodistpar)
